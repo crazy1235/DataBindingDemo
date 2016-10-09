@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jacksen.databindingdemo.LoginActivity">
+
+    <data>
+
+        <!-- <import
+             alias="myUser"
+             type="com.jacksen.databindingdemo.User" />
+
+         <variable
+             name="user1"
+             type="myUser" />
+
+         <variable
+             name="user2"
+             type="myUser" />-->
+
+        <variable
+            name="user"
+            type="com.jacksen.databindingdemo.User" />
+
+        <variable
+            name="handlers"
+            type="com.jacksen.databindingdemo.MyHandlers" />
+
+        <variable
+            name="myClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="gender"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.phone}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.name}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.password}" />
+
+            <TextView
+                android:id="@+id/gender_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{gender}" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{handlers.onClick}"
+                android:text="login" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{myClick}"
+                android:text="reset" />
+
+            <Button
+                android:id="@+id/exit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="exit" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/first_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{myClick}"
+                android:text="first" />
+
+
+            <Button
+                android:id="@+id/second_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{myClick}"
+                android:text="second" />
+
+            <Button
+                android:id="@+id/third_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{myClick}"
+                android:text="third" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

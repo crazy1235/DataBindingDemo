@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jacksen.databindingdemo.MainActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isShow"
+            type="Boolean" />
+
+        <import type="java.util.ArrayList" />
+
+        <variable
+            name="list"
+            type="ArrayList&lt;String>" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="这是一个标题"
+            android:visibility="@{(isShow ?? true) ? View.VISIBLE : View.INVISIBLE}" />
+
+
+        <Button
+            android:id="@+id/test_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试按钮" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="#E0EEE0"
+            android:text="@{list[1]}"
+            android:textAlignment="center" />
+
+
+    </LinearLayout>
+</layout>
