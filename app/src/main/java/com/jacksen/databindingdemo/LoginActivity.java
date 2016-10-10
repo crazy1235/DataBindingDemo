@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.first_btn:
-                Toast.makeText(this, "first button", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, CollectionActivity.class));
                 break;
             case R.id.second_btn:
                 startActivity(new Intent(LoginActivity.this, ListViewActivity.class));

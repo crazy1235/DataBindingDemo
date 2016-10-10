@@ -9,6 +9,11 @@ import com.jacksen.databindingdemo.databinding.ActivityListViewBinding;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * ListView的使用
+ *
+ * @author jacksen
+ */
 public class ListViewActivity extends AppCompatActivity {
 
     @Override
