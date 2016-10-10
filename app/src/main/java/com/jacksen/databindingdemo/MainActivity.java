@@ -1,11 +1,12 @@
 package com.jacksen.databindingdemo;
 
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.jacksen.databindingdemo.databinding.ActivityMainBinding;
+import com.jacksen.databindingdemo.databinding.MainBinding;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        final MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
 //        binding.setIsShow(flag);
 //        flag = !flag;

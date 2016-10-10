@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.jacksen.databindingdemo.MainActivity">
 
-    <data>
+    <data class="MainBinding">
 
         <import type="android.view.View" />
 
