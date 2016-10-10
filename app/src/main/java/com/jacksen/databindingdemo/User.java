@@ -1,14 +1,22 @@
 package com.jacksen.databindingdemo;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+import android.view.View;
+import android.widget.Toast;
+
 /**
  * Created by Admin on 2016/10/9.
  */
 
-public class User {
+public class User extends BaseObservable {
 
     private String phone;
     private String name;
     private String password;
+    private String iconUrl;
+
+    private boolean vip;
 
     public User() {
     }
@@ -19,6 +27,21 @@ public class User {
         this.password = password;
     }
 
+    public User(String phone, String name, String password, String iconUrl, boolean vip) {
+        this.phone = phone;
+        this.name = name;
+        this.password = password;
+        this.iconUrl = iconUrl;
+        this.vip = vip;
+    }
+
+    public void onItemClick(View view) {
+        Toast.makeText(view.getContext(), "view clicked", Toast.LENGTH_SHORT).show();
+        this.vip = !vip;
+        notifyPropertyChanged(BR.vip);
+        notifyPropertyChanged(BR.name);
+    }
+
     public String getPhone() {
         return phone;
     }
@@ -27,8 +50,9 @@ public class User {
         this.phone = phone;
     }
 
+    @Bindable
     public String getName() {
-        return name;
+        return name + (vip ? "（VIP用户）" : "");
     }
 
     public void setName(String name) {
@@ -41,5 +65,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getIconUrl() {
+        return iconUrl;
+    }
+
+    public void setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
+    }
+
+    @Bindable
+    public boolean isVip() {
+        return vip;
+    }
+
+    public void setVip(boolean vip) {
+        this.vip = vip;
     }
 }

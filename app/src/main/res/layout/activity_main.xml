@@ -15,7 +15,7 @@
 
         <variable
             name="list"
-            type="ArrayList&lt;String>" />
+            type="ArrayList&lt;String&gt;" />
 
     </data>
 

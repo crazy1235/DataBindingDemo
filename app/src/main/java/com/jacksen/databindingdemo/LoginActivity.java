@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(this, "first button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.second_btn:
-                Toast.makeText(this, "second button", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, ListViewActivity.class));
                 break;
             case R.id.third_btn:
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
