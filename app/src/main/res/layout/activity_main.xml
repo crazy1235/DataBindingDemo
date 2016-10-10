@@ -7,15 +7,15 @@
 
         <import type="android.view.View" />
 
+        <import type="android.text.TextUtils" />
+
         <variable
             name="isShow"
             type="Boolean" />
 
-        <import type="java.util.ArrayList" />
-
         <variable
-            name="list"
-            type="ArrayList&lt;String&gt;" />
+            name="text"
+            type="String" />
 
     </data>
 
@@ -44,10 +44,10 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="#E0EEE0"
-            android:text="@{list[1]}"
+            android:text="@{TextUtils.isEmpty(text) ? @string/app_name : text}"
             android:textAlignment="center" />
 
 
