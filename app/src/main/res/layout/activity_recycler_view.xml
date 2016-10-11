@@ -8,7 +8,7 @@
 
         <variable
             name="adapter"
-            type="com.jacksen.databindingdemo.RecyclerAdapter" />
+            type="com.jacksen.databindingdemo.chat.RecyclerAdapter" />
 
     </data>
 
@@ -33,6 +33,7 @@
 
 
             <EditText
+                android:id="@+id/input_msg_et"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="5dp"
@@ -50,6 +51,7 @@
 
 
             <ImageView
+                android:id="@+id/send_msg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"

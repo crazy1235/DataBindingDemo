@@ -1,4 +1,4 @@
-package com.jacksen.databindingdemo;
+package com.jacksen.databindingdemo.chat;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -8,7 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jacksen.databindingdemo.chat.Message;
+import com.jacksen.databindingdemo.BR;
+import com.jacksen.databindingdemo.R;
 
 import java.util.List;
 
