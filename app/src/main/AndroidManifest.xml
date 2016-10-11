@@ -26,6 +26,9 @@
         <activity
             android:name=".CollectionActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".RecyclerViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

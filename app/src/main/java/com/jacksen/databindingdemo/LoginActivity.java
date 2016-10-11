@@ -57,6 +57,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.third_btn:
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 break;
+            case R.id.recycler_btn:
+                startActivity(new Intent(LoginActivity.this, RecyclerViewActivity.class));
             default:
                 break;
         }
