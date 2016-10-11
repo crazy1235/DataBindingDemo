@@ -43,6 +43,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements View.OnCl
         binding.setAdapter(adapter);
 
 
+        binding.setOnClick(this);
     }
 
     @Override
@@ -53,6 +54,12 @@ public class RecyclerViewActivity extends AppCompatActivity implements View.OnCl
                 messages.add(new Message(content, Message.Direct.SEND));
                 messages.add(new Message("自动回复", Message.Direct.RECEIVE));
                 binding.notifyPropertyChanged(BR.adapter);
+
+//                binding.executePendingBindings();
+
+                //TODO 清空内容，隐藏键盘
+
+
                 break;
             default:
                 break;
