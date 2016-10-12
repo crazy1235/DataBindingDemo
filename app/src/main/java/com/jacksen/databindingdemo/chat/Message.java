@@ -6,7 +6,6 @@ import android.databinding.Bindable;
 /**
  * Created by Admin on 2016/10/11.
  */
-
 public class Message extends BaseObservable {
 
     public enum Direct {
@@ -46,6 +45,7 @@ public class Message extends BaseObservable {
         this.time = time;
     }
 
+    @Bindable
     public Direct getDirect() {
         return direct;
     }

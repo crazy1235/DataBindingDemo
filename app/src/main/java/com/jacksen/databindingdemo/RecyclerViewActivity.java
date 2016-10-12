@@ -9,6 +9,7 @@ import android.view.View;
 import com.jacksen.databindingdemo.chat.Message;
 import com.jacksen.databindingdemo.chat.RecyclerAdapter;
 import com.jacksen.databindingdemo.databinding.ActivityRecyclerViewBinding;
+import com.jacksen.databindingdemo.utils.KeyBoardUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +58,11 @@ public class RecyclerViewActivity extends AppCompatActivity implements View.OnCl
 
 //                binding.executePendingBindings();
 
-                //TODO 清空内容，隐藏键盘
+                // 此处如果不做视图改变，添加的内容不显示。？？？？？
 
+                // 清空内容，隐藏键盘
+                binding.inputMsgEt.setText("");
+                KeyBoardUtil.closeKeyboard(binding.inputMsgEt, RecyclerViewActivity.this);
 
                 break;
             default:

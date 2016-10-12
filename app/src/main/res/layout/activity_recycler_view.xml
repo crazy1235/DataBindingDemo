@@ -24,7 +24,7 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#eaf1ea"
+            android:background="#babeba"
             app:adapter="@{adapter}" />
 
         <LinearLayout
