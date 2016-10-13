@@ -18,9 +18,9 @@ public class Pic extends BaseObservable {
     static {
         urls.add("http://img1.3lian.com/2016/gif/w/4/22.jpg");
         urls.add("http://img1.3lian.com/2016/gif/w/4/35.jpg");
-        urls.add("http://dwz.cn/4m2B00");
-        urls.add("http://dwz.cn/4m2BH2");
-        urls.add("http://dwz.cn/4m2CgD");
+        urls.add("http://upload.qqbody.com/ns/20160915/132727641u31afttfs0g.jpg");
+        urls.add("http://upload.qqbody.com/ns/20160915/132727462vd1tsf3fv1u.jpg");
+        urls.add("http://upload.qqbody.com/ns/20160915/1327263515gjjfuf4rmu.jpg");
         urls.add("http://img.jgzyw.com:8000/d/img/touxiang/2015/01/08/2015010800463730244.jpg");
         urls.add("http://tupian.qqjay.com/tou3/2016/0614/105e4a5b4eef29a3d2dcfa69b2b33da0.jpg");
         urls.add("http://tupian.qqjay.com/tou3/2016/0725/cb00091099ffbf09f4861f2bbb5dd993.jpg");

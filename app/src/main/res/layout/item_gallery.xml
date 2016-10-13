@@ -13,12 +13,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="180dp">
-
+        <!--app:placeHolder="@{R.drawable.place_holder}"-->
         <ImageView
+            android:id="@+id/pic_iv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@{pic.imageUrl}"
-            app:placeHolder="@{R.drawable.place_holder}" />
+            android:src="@{pic.imageUrl}" />
 
         <TextView
             android:layout_width="match_parent"

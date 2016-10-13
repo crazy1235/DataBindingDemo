@@ -32,6 +32,10 @@
         <activity
             android:name=".gallery.GalleryActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".gallery.GalleryDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

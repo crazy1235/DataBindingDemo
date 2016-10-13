@@ -6,6 +6,7 @@ import android.databinding.OnRebindCallback;
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.jacksen.databindingdemo.databinding.ItemGalleryBinding;
@@ -25,6 +26,12 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryV
     private RecyclerView recyclerView;
 
     private List<Pic> pics;
+
+    private OnItemListener onItemListener;
+
+    public void setOnItemListener(OnItemListener onItemListener) {
+        this.onItemListener = onItemListener;
+    }
 
     public GalleryAdapter(Context context, RecyclerView recyclerView, List<Pic> pics) {
         this.layoutInflater = LayoutInflater.from(context);
@@ -77,8 +84,24 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryV
     }
 
     @Override
-    public void onBindViewHolder(GalleryViewHolder holder, int position) {
+    public void onBindViewHolder(final GalleryViewHolder holder, final int position) {
         holder.bindTo(pics.get(position));
+
+        if (onItemListener != null) {
+            holder.getBinding().getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemListener.onItemClick(holder.getBinding().picIv, position);
+                }
+            });
+            holder.getBinding().getRoot().setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    onItemListener.onItemLongClick(position);
+                    return true;
+                }
+            });
+        }
     }
 
     @Override
