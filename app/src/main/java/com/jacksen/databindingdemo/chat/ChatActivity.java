@@ -1,4 +1,4 @@
-package com.jacksen.databindingdemo;
+package com.jacksen.databindingdemo.chat;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -6,22 +6,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
-import com.jacksen.databindingdemo.chat.Message;
-import com.jacksen.databindingdemo.chat.RecyclerAdapter;
-import com.jacksen.databindingdemo.databinding.ActivityRecyclerViewBinding;
+import com.jacksen.databindingdemo.R;
 import com.jacksen.databindingdemo.utils.KeyBoardUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import chat.RecyclerViewBinding;
 
 /**
  * recyclerView
  *
  * @author jacksen
  */
-public class RecyclerViewActivity extends AppCompatActivity implements View.OnClickListener {
+public class ChatActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ActivityRecyclerViewBinding binding;
+    private RecyclerViewBinding binding;
     private List<Message> messages;
 
     @Override
@@ -54,7 +54,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements View.OnCl
                 String content = binding.inputMsgEt.getText().toString();
                 messages.add(new Message(content, Message.Direct.SEND));
                 messages.add(new Message("自动回复", Message.Direct.RECEIVE));
-                binding.notifyPropertyChanged(BR.adapter);
+                binding.notifyPropertyChanged(com.jacksen.databindingdemo.BR.adapter);
 
 //                binding.executePendingBindings();
 
@@ -62,7 +62,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements View.OnCl
 
                 // 清空内容，隐藏键盘
                 binding.inputMsgEt.setText("");
-                KeyBoardUtil.closeKeyboard(binding.inputMsgEt, RecyclerViewActivity.this);
+                KeyBoardUtil.closeKeyboard(binding.inputMsgEt, ChatActivity.this);
 
                 break;
             default:

@@ -1,11 +1,13 @@
 package com.jacksen.databindingdemo;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.jacksen.databindingdemo.databinding.MainBinding;
+import com.jacksen.databindingdemo.gallery.GalleryActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 binding.setIsShow(flag);
                 flag = !flag;
+
+                //
+                startActivity(new Intent(MainActivity.this, GalleryActivity.class));
             }
         });
 

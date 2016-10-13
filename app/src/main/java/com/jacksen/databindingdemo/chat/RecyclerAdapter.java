@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.jacksen.databindingdemo.BR;
 import com.jacksen.databindingdemo.R;
+import com.jacksen.databindingdemo.databinding.ItemReceiveMessageBinding;
+import com.jacksen.databindingdemo.databinding.ItemSentMessageBinding;
 
 import java.util.List;
 
@@ -31,17 +33,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Bindin
     @Override
     public BindingHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (1 == viewType) {
-            ViewDataBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_sent_message, parent, false);
+            ItemSentMessageBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_sent_message, parent, false);
             BindingHolder holder = new BindingHolder(binding.getRoot());
             holder.setDataBinding(binding);
             return holder;
         } else if (2 == viewType) {
-            ViewDataBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_receive_message, parent, false);
+            ItemReceiveMessageBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_receive_message, parent, false);
             BindingHolder holder = new BindingHolder(binding.getRoot());
             holder.setDataBinding(binding);
             return holder;
         } else {
-            ViewDataBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_sent_message, parent, false);
+            ItemSentMessageBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_sent_message, parent, false);
             BindingHolder holder = new BindingHolder(binding.getRoot());
             holder.setDataBinding(binding);
             return holder;

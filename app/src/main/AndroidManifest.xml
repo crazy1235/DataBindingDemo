@@ -27,7 +27,10 @@
             android:name=".CollectionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RecyclerViewActivity"
+            android:name=".chat.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".gallery.GalleryActivity"
             android:screenOrientation="portrait" />
     </application>
 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="pic"
+            type="com.jacksen.databindingdemo.gallery.Pic" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@{pic.imageUrl}"
+            app:placeHolder="@{R.drawable.place_holder}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#49000000"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@{pic.date}"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+</layout>

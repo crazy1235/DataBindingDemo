@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.jacksen.databindingdemo.chat.ChatActivity;
 import com.jacksen.databindingdemo.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
@@ -58,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 break;
             case R.id.recycler_btn:
-                startActivity(new Intent(LoginActivity.this, RecyclerViewActivity.class));
+                startActivity(new Intent(LoginActivity.this, ChatActivity.class));
             default:
                 break;
         }

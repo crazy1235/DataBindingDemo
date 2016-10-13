@@ -2,9 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.jacksen.databindingdemo.RecyclerViewActivity">
+    tools:context="com.jacksen.databindingdemo.chat.ChatActivity">
 
-    <data>
+    <data class="chat.RecyclerViewBinding">
 
         <variable
             name="onClick"
