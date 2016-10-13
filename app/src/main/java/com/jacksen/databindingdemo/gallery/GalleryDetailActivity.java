@@ -18,8 +18,8 @@ public class GalleryDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         GalleryDetailBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_gallery_detail);
 
-//        setSupportActionBar(binding.toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(binding.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
