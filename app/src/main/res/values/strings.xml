@@ -1,6 +1,31 @@
 <resources>
     <string name="app_name">DataBindingDemo</string>
 
-    <!---->
+    <!-- base config -->
+    <string name="base_config">基本配置</string>
+
+    <!-- include -->
+    <string name="include_config">include标签</string>
+
+    <!-- expression -->
+    <string name="expression">表达式使用</string>
+
+    <!-- list view -->
+    <string name="list_view">ListView结合DataBinding</string>
+
+    <!-- recycler view -->
+    <string name="recycler_view">RecyclerView结合DataBinding</string>
+
+    <!-- RxJava-->
+    <string name="rxjava_db">RxJava结合DataBinding</string>
+
+    <!-- Dagger2 -->
+    <string name="dagger2_db">Dagger2结合DataBinding</string>
+
+    <!--transition name-->
     <string name="transition_name_gallery">gallery_transition</string>
+
+    <!---->
+    <string name="vip_user">该用户是VIP，对其姓名进行保密！</string>
+
 </resources>

@@ -9,8 +9,10 @@ import android.view.View;
 import com.jacksen.databindingdemo.databinding.MainBinding;
 import com.jacksen.databindingdemo.gallery.GalleryActivity;
 
-
-public class MainActivity extends AppCompatActivity {
+/**
+ * @author jacksen
+ */
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private boolean flag = false;
 
@@ -36,5 +38,29 @@ public class MainActivity extends AppCompatActivity {
 
         binding.setText("");
 
+        binding.setOnClick(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.base_config_btn:
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                break;
+            case R.id.include_config_btn:
+                startActivity(new Intent(MainActivity.this, IncludeActivity.class));
+                break;
+            case R.id.expression_btn:
+                break;
+            case R.id.list_view_btn:
+                startActivity(new Intent(MainActivity.this, ListViewActivity.class));
+                break;
+            case R.id.recycler_btn:
+                startActivity(new Intent(MainActivity.this, GalleryActivity.class));
+                break;
+            default:
+                break;
+        }
     }
 }

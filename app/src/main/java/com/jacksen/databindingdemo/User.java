@@ -11,10 +11,16 @@ import android.widget.Toast;
 
 public class User extends BaseObservable {
 
+    static User user = new User("1234567890", "jack", "sen", 0);
+
     private String phone;
     private String name;
     private String password;
     private String iconUrl;
+    private int sex; // 0->male  1->female
+
+    private String firstName;
+    private String lastName;
 
     private boolean vip;
 
@@ -25,6 +31,19 @@ public class User extends BaseObservable {
         this.phone = phone;
         this.name = name;
         this.password = password;
+    }
+
+    public User(String phone, String name, int sex) {
+        this.phone = phone;
+        this.name = name;
+        this.sex = sex;
+    }
+
+    public User(String phone, String firstName, String lastName, int sex) {
+        this.phone = phone;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sex = sex;
     }
 
     public User(String phone, String name, String password, String iconUrl, boolean vip) {
@@ -82,5 +101,29 @@ public class User extends BaseObservable {
 
     public void setVip(boolean vip) {
         this.vip = vip;
+    }
+
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
