@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 集合的使用
+ * 集合 & 资源文件 & 集合 的使用
  *
  * @author jacksen
  */
@@ -45,5 +45,11 @@ public class CollectionActivity extends BaseActivity {
         SparseArray<User> sparseArray = new SparseArray<>();
         sparseArray.put(1, new User("110", "jacksen", "123"));
         binding.setSparse(sparseArray);
+
+        //
+        binding.setIsShow(true);
+
+        //
+        binding.setAppName("");
     }
 }

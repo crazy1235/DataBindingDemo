@@ -7,19 +7,10 @@
 
         <import type="android.view.View" />
 
-        <import type="android.text.TextUtils" />
 
         <variable
             name="onClick"
             type="android.view.View.OnClickListener" />
-
-        <variable
-            name="isShow"
-            type="Boolean" />
-
-        <variable
-            name="text"
-            type="String" />
 
     </data>
 
@@ -34,29 +25,6 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <TextView
-                android:id="@+id/textView"
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="这是一个标题"
-                android:visibility="@{(isShow ?? true) ? View.VISIBLE : View.INVISIBLE}" />
-
-
-            <Button
-                android:id="@+id/test_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="测试按钮" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="#E0EEE0"
-                android:text="@{TextUtils.isEmpty(text) ? @string/app_name : text}"
-                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/base_config_btn"

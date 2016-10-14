@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <import type="java.util.ArrayList" />
 
         <import type="java.util.Map" />
@@ -12,6 +14,8 @@
         <import type="android.util.SparseArray" />
 
         <import type="com.jacksen.databindingdemo.User" />
+
+        <import type="android.text.TextUtils" />
 
         <variable
             name="list"
@@ -29,165 +33,199 @@
             name="sparse"
             type="SparseArray&lt;User&gt;" />
 
+        <variable
+            name="isShow"
+            type="Boolean" />
+
+
+        <variable
+            name="appName"
+            type="String" />
+
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <!--List-->
-
-        <TextView
-            style="@style/TextAppearance.AppCompat.Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#E0EEE0"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@{list[0]}"
-            android:textAlignment="center" />
-
-        <TextView
-            style="@style/TextAppearance.AppCompat.Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#E0EEE0"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@{list.get(1)}"
-            android:textAlignment="center" />
-
-        <!--Array-->
-
-        <TextView
-            style="@style/TextAppearance.AppCompat.Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#E0EEE0"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@{array[1]}"
-            android:textAlignment="center" />
-
-        <!--Map-->
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#E0EEE0"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!--List-->
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0EEE0"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@{list[0]}"
+                android:textAlignment="center" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#E0EEE0"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@{list.get(1)}"
+                android:textAlignment="center" />
+
+            <!--Array-->
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#E0EEE0"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@{array[1]}"
+                android:textAlignment="center" />
+
+            <!--Map-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#E0EEE0"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="name: "
+                    android:textAlignment="center" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@{map[&quot;name&quot;]}"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#E0EEE0"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="age: "
+                    android:textAlignment="center" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@{map[`age`]}"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#E0EEE0"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="phone: "
+                    android:textAlignment="center" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text='@{map["phone"]}'
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#E0EEE0"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="height: "
+                    android:textAlignment="center" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@{map.get(`height`)}"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <!--SparseArray-->
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#E0EEE0"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@{sparse[1].phone}"
+                android:textAlignment="center" />
+
 
             <TextView
                 style="@style/TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:padding="10dp"
-                android:text="name: "
-                android:textAlignment="center" />
+                android:text="这是一个标题"
+                android:visibility="@{(isShow ?? true) ? View.VISIBLE : View.INVISIBLE}" />
+
 
             <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@{map[&quot;name&quot;]}"
+                android:layout_marginTop="10dp"
+                android:background="#E0EEE0"
+                android:text="@{TextUtils.isEmpty(appName) ? @string/app_name : appName}"
                 android:textAlignment="center" />
-
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#E0EEE0"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="age: "
-                android:textAlignment="center" />
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@{map[`age`]}"
-                android:textAlignment="center" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#E0EEE0"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="phone: "
-                android:textAlignment="center" />
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text='@{map["phone"]}'
-                android:textAlignment="center" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#E0EEE0"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="height: "
-                android:textAlignment="center" />
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@{map.get(`height`)}"
-                android:textAlignment="center" />
-
-        </LinearLayout>
-
-        <!--SparseArray-->
-
-        <TextView
-            style="@style/TextAppearance.AppCompat.Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#E0EEE0"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@{sparse[1].phone}"
-            android:textAlignment="center" />
-
-    </LinearLayout>
+    </ScrollView>
 </layout>

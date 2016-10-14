@@ -15,32 +15,14 @@ import com.jacksen.databindingdemo.gallery.GalleryActivity;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private boolean flag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
-//        binding.setIsShow(flag);
-//        flag = !flag;
-
-        binding.testBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.setIsShow(flag);
-                flag = !flag;
-
-                //
-                startActivity(new Intent(MainActivity.this, GalleryActivity.class));
-            }
-        });
-
-        binding.setText("");
+        MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         binding.setOnClick(this);
-
     }
 
     @Override

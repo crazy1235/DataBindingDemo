@@ -8,7 +8,7 @@
     <string name="include_config">include标签</string>
 
     <!-- expression -->
-    <string name="expression">表达式与集合的使用</string>
+    <string name="expression">表达式&amp; 集合&amp; 资源文件的使用</string>
 
     <!-- list view -->
     <string name="list_view">ListView结合DataBinding</string>
