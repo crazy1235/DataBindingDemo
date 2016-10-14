@@ -33,8 +33,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text='@{user.vip == true ? @string/vip_user : user.firstName.substring(0, 1).toUpperCase() + "." + user.lastName}' />
+                android:text='@{user.vip == true ? @string/vip_user : user.fullName}' />
 
+            <!--android:text='@{user.vip == true ? @string/vip_user : user.firstName.substring(0, 1).toUpperCase() + "." + user.lastName}'-->
 
         </LinearLayout>
 
@@ -69,14 +70,16 @@
 
             <TextView
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="sex: " />
 
             <TextView
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@{user.sex == 0 ? `男` : `女`}" />
 
 

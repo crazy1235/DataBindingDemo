@@ -8,13 +8,14 @@
     <string name="include_config">include标签</string>
 
     <!-- expression -->
-    <string name="expression">表达式使用</string>
+    <string name="expression">表达式与集合的使用</string>
 
     <!-- list view -->
     <string name="list_view">ListView结合DataBinding</string>
 
     <!-- recycler view -->
-    <string name="recycler_view">RecyclerView结合DataBinding</string>
+    <string name="recycler_view1">RecyclerView多种Item</string>
+    <string name="recycler_view2">RecyclerView单Item</string>
 
     <!-- RxJava-->
     <string name="rxjava_db">RxJava结合DataBinding</string>

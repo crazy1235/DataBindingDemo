@@ -26,6 +26,9 @@ public class GalleryActivity extends BaseActivity {
 
     public static final String IMAGE_URL = "image_url";
 
+    private List<Pic> pics = new ArrayList<>();
+    private GalleryAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +37,10 @@ public class GalleryActivity extends BaseActivity {
         binding.galleryRv.setLayoutManager(new GridLayoutManager(this, 2));
 
 
-        final List<Pic> pics = new ArrayList<>();
         for (int i = 0; i < Pic.urls.size(); i++) {
             pics.add(new Pic(Pic.urls.get(i)));
         }
-        final GalleryAdapter adapter = new GalleryAdapter(this, binding.galleryRv, pics);
+        adapter = new GalleryAdapter(this, binding.galleryRv, pics);
         binding.setAdapter(adapter);
 
         adapter.setOnItemListener(new OnItemListener() {
@@ -73,8 +75,9 @@ public class GalleryActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add:
-                // TODO 添加item
-
+                // 添加item
+                pics.add(Pic.getRandomPic());
+                adapter.notifyItemInserted(pics.size());
                 break;
             default:
                 break;

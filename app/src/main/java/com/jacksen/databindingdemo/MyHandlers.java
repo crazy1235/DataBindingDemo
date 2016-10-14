@@ -10,6 +10,6 @@ import android.widget.Toast;
 public class MyHandlers {
 
     public void onClick(View view) {
-        Toast.makeText(view.getContext(), "clicked", Toast.LENGTH_SHORT).show();
+        Toast.makeText(view.getContext(), "登录成功", Toast.LENGTH_SHORT).show();
     }
 }

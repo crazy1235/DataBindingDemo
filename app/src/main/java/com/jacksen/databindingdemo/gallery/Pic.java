@@ -6,6 +6,7 @@ import android.support.annotation.DrawableRes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Admin on 2016/10/13.
@@ -31,6 +32,12 @@ public class Pic extends BaseObservable {
         urls.add("http://www.ucicq.com/uploads/allimg/161013/05263L264_0.jpg");
         urls.add("http://www.th7.cn/d/file/p/2016/09/20/d89f3de7bb70bb407907f12af1d8325b.jpg");
         urls.add("http://www.th7.cn/d/file/p/2016/09/12/384441ac9444cc474069e9dce1c7c1bf.jpg");
+    }
+
+    static Pic getRandomPic() {
+        Random random = new Random();
+        int index = random.nextInt(urls.size());
+        return new Pic(urls.get(index));
     }
 
     private String date = "2016-10-13";

@@ -87,11 +87,18 @@
                 android:text="@string/list_view" />
 
             <Button
-                android:id="@+id/recycler_view_btn"
+                android:id="@+id/recycler_view1_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="@{onClick}"
-                android:text="@string/recycler_view" />
+                android:text="@string/recycler_view1" />
+
+            <Button
+                android:id="@+id/recycler_view2_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClick}"
+                android:text="@string/recycler_view2" />
 
         </LinearLayout>
     </ScrollView>

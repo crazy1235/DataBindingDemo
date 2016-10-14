@@ -24,6 +24,17 @@ public class User extends BaseObservable {
 
     private boolean vip;
 
+    /**
+     * 返回拼接好的名称
+     *
+     * @return
+     */
+    @Bindable
+    public String getFullName() {
+        return firstName.substring(0, 1).toUpperCase() + "." + lastName;
+    }
+
+
     public User() {
     }
 

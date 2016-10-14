@@ -24,8 +24,6 @@ public class IncludeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         ActivityIncludeBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_include);
 
-//        ActivityIncludeBinding.inflate(getLayoutInflater());
-
         //
         binding.included.blogSite.setText(BLOG_URL);
         binding.included.gotoBlotBtn.setOnClickListener(new View.OnClickListener() {

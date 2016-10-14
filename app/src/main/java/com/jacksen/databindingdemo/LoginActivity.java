@@ -1,25 +1,27 @@
 package com.jacksen.databindingdemo;
 
-import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.jacksen.databindingdemo.chat.ChatActivity;
 import com.jacksen.databindingdemo.databinding.ActivityLoginBinding;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+/**
+ * 基本应用
+ *
+ * @author jacksen
+ */
+public class LoginActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //
-        ActivityLoginBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
-        binding.textView.setText("请填写登录信息");
+//        ActivityLoginBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 
-        User user = new User("18601013413", "yansen", "12345");
+        ActivityLoginBinding binding = ActivityLoginBinding.inflate(getLayoutInflater());
+
+        User user = new User("1234567890", "jacksen", "12345");
         binding.setUser(user);
 
         binding.setHandlers(new MyHandlers());
@@ -35,33 +37,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         binding.exitBtn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Toast.makeText(LoginActivity.this, "长按exit Button", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "长按了exit Button", Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
 
-        binding.setMyClick(this);
-
-        //自定义属性
-        binding.setGender("male");
+        binding.setLoginTitle("请填写登录信息");
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.first_btn:
-                startActivity(new Intent(LoginActivity.this, CollectionActivity.class));
-                break;
-            case R.id.second_btn:
-                startActivity(new Intent(LoginActivity.this, ListViewActivity.class));
-                break;
-            case R.id.third_btn:
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                break;
-            case R.id.recycler_btn:
-                startActivity(new Intent(LoginActivity.this, ChatActivity.class));
-            default:
-                break;
-        }
-    }
 }

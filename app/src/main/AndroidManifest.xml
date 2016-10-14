@@ -19,18 +19,23 @@
         </activity>
         <activity
             android:name=".LoginActivity"
+            android:label="@string/base_config"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ListViewActivity"
+            android:label="@string/list_view"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CollectionActivity"
+            android:label="@string/expression"
             android:screenOrientation="portrait" />
         <activity
             android:name=".chat.ChatActivity"
+            android:label="@string/recycler_view1"
             android:screenOrientation="portrait" />
         <activity
             android:name=".gallery.GalleryActivity"
+            android:label="@string/recycler_view2"
             android:screenOrientation="portrait" />
         <activity
             android:name=".gallery.GalleryDetailActivity"
@@ -38,6 +43,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".IncludeActivity"
+            android:label="@string/include_config"
             android:screenOrientation="portrait" />
     </application>
 

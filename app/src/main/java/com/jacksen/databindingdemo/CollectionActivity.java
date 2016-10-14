@@ -1,7 +1,6 @@
 package com.jacksen.databindingdemo;
 
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.SparseArray;
 
@@ -12,11 +11,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 演示集合的使用
+ * 集合的使用
  *
  * @author jacksen
  */
-public class CollectionActivity extends AppCompatActivity {
+public class CollectionActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
